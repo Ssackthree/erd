@@ -164,4 +164,6 @@ ex(회원 쿠폰 아이디 : 1, 고객 아이디 : 1, 쿠폰 아이디 1 이면,
 **회원이 얼마나 리뷰했는지 알 방법이 있나?** <br/>
 
 # 1일차 erd
-erd-cloud/1차 서점 쇼핑몰 erd.png
+[erd-cloud/1차 서점 쇼핑몰 erd.png](https://github.com/nhnacademy-be7-Ssackthree/erd-cloud/blob/6a585f47dffce4d3a2bfd542083750504081d757/erd-cloud/1%EC%B0%A8%20%EC%84%9C%EC%A0%90%20%EC%87%BC%ED%95%91%EB%AA%B0%20erd.png)
+# 2일차 erd
+
