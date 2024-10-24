@@ -52,7 +52,7 @@ CREATE TABLE book (
 	book_name VARCHAR(255) NOT NULL,
 	book_index VARCHAR(255) NOT NULL,
 	book_info TEXT NOT NULL,
-	book_isbn VARCHAR(20) NOT NULL,
+	book_isbn VARCHAR(20) NOT NULL UNIQUE,
 	publication_date DATETIME NOT NULL,
 	regular_price INT NOT NULL,
 	sale_price INT NOT NULL,
@@ -74,7 +74,7 @@ DROP TABLE IF EXISTS member;
 CREATE TABLE member (
 	customer_id BIGINT NOT NULL,
 	member_grade_id BIGINT NOT NULL,
-	member_login_id VARCHAR(20) NOT NULL,
+	member_login_id VARCHAR(20) NOT NULL UNIQUE,
 	member_password VARCHAR(255) NOT NULL COMMENT '암호화된 키 사용',
 	member_birthdate VARCHAR(8) NOT NULL,
 	member_created_at DATETIME NOT NULL,
