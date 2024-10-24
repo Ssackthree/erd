@@ -1,3 +1,7 @@
+
+# erd
+3조 서점 프로젝트 ERD 입니다.
+=======
 # ****
 수정 시 깃허브를 바로 수정하지 마시고 변경사항과 이유를 같이 작성하여 카톡이나 두레이로 올려주세요.
 
@@ -183,3 +187,19 @@ ex(회원 쿠폰 아이디 : 1, 고객 아이디 : 1, 쿠폰 아이디 1 이면,
 [erd-cloud/1차 서점 쇼핑몰 erd.png](https://github.com/nhnacademy-be7-Ssackthree/erd-cloud/blob/6a585f47dffce4d3a2bfd542083750504081d757/erd-cloud/1%EC%B0%A8%20%EC%84%9C%EC%A0%90%20%EC%87%BC%ED%95%91%EB%AA%B0%20erd.png)
 # 2일차 erd
 
+
+
+
+테이블 drop 시 참조관계로 인해 제거가 되지 않으면
+제약조건 제거용.sql 을 코드 맨 위에 두고 제약 조건을 먼저 제거해주세요.
+
+
+예시 오류)
+13:42:09	DROP TABLE IF EXISTS payment_type	
+Error Code: 3730. Cannot drop table 'payment_type' referenced
+ by a foreign key constraint 'FK_payment_type_TO_payment' on table 'payment'.	0.000 sec
+
+
+24.10.24 / PM 14:00
+payment 테이블이 참조 중인 payment_type_id와 payment_type의 payment_type_id 타입이 일치하지 않는 것을 수정하였습니다. => bigint
+delivery 테이블이 참조 중인 delivery_rule_id와 delivery_rule 테이블의 delivery_rule_id의 데이터 타입이 일치하지 않는 것을 수정하였습니다. => bigint
