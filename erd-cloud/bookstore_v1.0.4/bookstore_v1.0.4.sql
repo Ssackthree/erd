@@ -37,9 +37,10 @@ DROP TABLE IF EXISTS member_grade;
 CREATE TABLE member_grade (
 	member_grade_id BIGINT NOT NULL,
 	member_grade_name VARCHAR(20) NOT NULL,
-	member_grade_discount INT NULL COMMENT '회원등급에 따른 할인률',
-	member_grade_condition INT NOT NULL,
-	member_grade_condition_type ENUM('POINT', 'ORDER_COUNT') NOT NULL COMMENT '포인트, 주문수',
+	member_grade_is_used BOOLEAN NOT NULL,
+	member_grade_create_at DATETIME NOT NULL,
+	member_grade_point_save FLOAT NULL,
+	
 	PRIMARY KEY (member_grade_id)
 );
 
