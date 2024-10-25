@@ -344,6 +344,9 @@ DROP TABLE IF EXISTS refund_reason;
 CREATE TABLE refund_reason (
 	refund_reason_id BIGINT NOT NULL,
 	refund_reason_name VARCHAR(20) NOT NULL,
+	refund_reason_is_used BOOLEAN NOT NULL,
+	refund_reason_created_at DATETIME NOT NULL,
+	refund_delivery_fee INT NOT NULL,
 	PRIMARY KEY (refund_reason_id)
 );
 
