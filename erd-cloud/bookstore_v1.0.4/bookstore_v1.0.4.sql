@@ -59,7 +59,7 @@ CREATE TABLE book (
 	is_packed BOOLEAN NOT NULL,
 	stock INT NOT NULL,
 	book_thumbnail_image_url TEXT NOT NULL,
-	book_view_count BIGINT NOT NULL DEFAULT 0,
+	book_view_count INT NOT NULL DEFAULT 0,
 	book_discount INT NULL,
 	PRIMARY KEY (book_id),
     
