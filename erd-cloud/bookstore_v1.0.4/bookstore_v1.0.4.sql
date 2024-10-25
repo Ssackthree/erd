@@ -95,10 +95,14 @@ DROP TABLE IF EXISTS coupon_rule;
 
 CREATE TABLE coupon_rule (
 	coupon_rule_id BIGINT NOT NULL,
-	coupon_rule_name VARCHAR(30) NOT NULL,
-	coupon_rule_type ENUM('AMOUNT', 'PERCENT') NOT NULL COMMENT '금액 할인, 비율 할인',
-	coupon_rule_amount INT NOT NULL COMMENT '할인 금액',
-	coupon_rule_discount_percent INT NOT NULL COMMENT '할인 비율',
+	coupon_type TINYINT NOT NULL,
+	coupon_min_order_price INT NOT NULL,
+	max_discount_price INT NOT NULL,
+	coupon_discount_price INT NOT NULL,
+	coupon_rule_name VARCHAR(20) NOT NULL,
+	coupon_is_used BOOLEAN NOT NULL,
+	coupon_rule_created_at DATETIME,
+
 	PRIMARY KEY (coupon_rule_id)
 );
 
@@ -111,7 +115,7 @@ CREATE TABLE coupon (
 	coupon_name VARCHAR(30) NOT NULL,
 	coupon_description TEXT NOT NULL,
 	coupon_effective_period INT NULL,
-	coupon_effective_period_unit ENUM('DAY', 'MONTH', 'YEAR') NULL COMMENT '단위 : 일.월,년',
+	coupon_effective_period_unit TINYINT NULL COMMENT '단위 : 일.월,년',
 	coupon_create_at DATETIME NOT NULL,
 	coupon_expired_at DATETIME NULL,
 	PRIMARY KEY (coupon_id),
