@@ -443,8 +443,8 @@ DROP TABLE IF EXISTS payment_type;
 
 CREATE TABLE payment_type (
 	payment_type_id BIGINT NOT NULL,
-	payment_type_name VARCHAR(20) NOT NULL,
-	payment_type_description TEXT NULL,
+	payment_type_name VARCHAR(30) NOT NULL,
+	payment_type_is_used BOOLEAN NOT NULL,
 	payment_type_created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (payment_type_id)
 );
