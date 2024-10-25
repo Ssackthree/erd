@@ -80,7 +80,7 @@ CREATE TABLE member (
 	member_birthdate VARCHAR(8) NOT NULL,
 	member_created_at DATETIME NOT NULL,
 	member_last_login_at DATETIME NULL,
-	member_status ENUM('ACTIVE', 'SLEEP', 'WITHDRAW') NOT NULL DEFAULT 'ACTIVE' COMMENT '활성, 휴면, 탈퇴',
+	member_status VARCHAR(10) NOT NULL DEFAULT 'ACTIVE' COMMENT '활성, 휴면, 탈퇴',
 	member_point INT NOT NULL DEFAULT 0 COMMENT '음수가 되는 상황 처리 필요',
 	PRIMARY KEY (customer_id),
     
