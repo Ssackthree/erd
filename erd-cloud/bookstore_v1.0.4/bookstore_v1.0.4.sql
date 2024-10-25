@@ -355,7 +355,7 @@ CREATE TABLE refund (
 	refund_reason_id BIGINT NOT NULL,
 	refund_quantity INT NOT NULL,
 	refund_price INT NOT NULL,
-	order_id BIGINT NOT NULL,
+	orders_id BIGINT NOT NULL,
 	book_id BIGINT NOT NULL,
 	PRIMARY KEY (refund_id),
     
@@ -363,7 +363,7 @@ CREATE TABLE refund (
     CONSTRAINT FK_refund_reason_TO_refund FOREIGN KEY (refund_reason_id) REFERENCES refund_reason(refund_reason_id),
 
    -- order_id와 book_id를 composite key로 사용하기 위해 OrderDetail에서 가져옵니다.
-    CONSTRAINT FK_order_detail_TO_refund FOREIGN KEY (order_id, book_id) REFERENCES order_detail(orders_id, book_id)
+    CONSTRAINT FK_order_detail_TO_refund FOREIGN KEY (orders_id, book_id) REFERENCES order_detail(orders_id, book_id)
 );
 
 -- ORDER_DETAIL_PACKAGING 테이블 생성
