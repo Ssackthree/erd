@@ -512,8 +512,8 @@ DROP TABLE IF EXISTS discount;
 CREATE TABLE discount (
     discount_id BIGINT NOT NULL,
     book_id BIGINT NOT NULL,
-    discount_name VARCHAR(30) NOT NULL,
-    discount_amount INT NOT NULL COMMENT '할인 금액',
+    book_discount_log INT NOT NULL,
+    book_discount_date TIMESTAMP NOT NULL,
     PRIMARY KEY (discount_id),
 
     -- book_id를 book 테이블의 book_id와 연결하는 외래 키
