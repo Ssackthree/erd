@@ -362,11 +362,8 @@ CREATE TABLE refund (
         -- refund_reason_id를 refund_reason 테이블의 refund_reason_id와 연결하는 외래 키
     CONSTRAINT FK_refund_reason_TO_refund FOREIGN KEY (refund_reason_id) REFERENCES refund_reason(refund_reason_id),
 
-    -- order_id를 orders 테이블의 orders_id와 연결하는 외래 키
-    CONSTRAINT FK_orders_TO_refund FOREIGN KEY (order_id) REFERENCES orders(orders_id),
-
-    -- book_id를 book 테이블의 book_id와 연결하는 외래 키
-    CONSTRAINT FK_book_TO_refund FOREIGN KEY (book_id) REFERENCES book(book_id)
+   -- order_id와 book_id를 composite key로 사용하기 위해 OrderDetail에서 가져옵니다.
+    CONSTRAINT FK_order_detail_TO_refund FOREIGN KEY (order_id, book_id) REFERENCES order_detail(orders_id, book_id)
 );
 
 -- ORDER_DETAIL_PACKAGING 테이블 생성
