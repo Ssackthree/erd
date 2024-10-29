@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS admin;
 CREATE TABLE admin (
 	admin_id BIGINT NOT NULL AUTO_INCREMENT,
 	admin_login_id VARCHAR(20) NOT NULL,
