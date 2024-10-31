@@ -193,7 +193,7 @@ CREATE TABLE category (
 	category_id BIGINT NOT NULL AUTO_INCREMENT,
 	category_name VARCHAR(20) NOT NULL,
 	super_category_id BIGINT NULL,
-    category_is_used BOOLEAN NOT NULL DEFAULT false	COMMENT '카테고리를 사용중인지 확인(미사용 시 false)',
+    category_is_used BOOLEAN NOT NULL DEFAULT true	COMMENT '카테고리를 사용중인지 확인(미사용 시 false)',
 	PRIMARY KEY (category_id),
     
     -- category 자기참조를 위한 외래키 연결) --
