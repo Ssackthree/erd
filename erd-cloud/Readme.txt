@@ -11,3 +11,7 @@ Error Code: 3730. Cannot drop table 'payment_type' referenced
 24.10.24 / PM 14:00
 payment 테이블이 참조 중인 payment_type_id와 payment_type의 payment_type_id 타입이 일치하지 않는 것을 수정하였습니다. => bigint
 delivery 테이블이 참조 중인 delivery_rule_id와 delivery_rule 테이블의 delivery_rule_id의 데이터 타입이 일치하지 않는 것을 수정하였습니다. => bigint
+
+
+24.11.05 / 12:59
+테이블 2개 제거 됨 / 총 테이블 수: 37개
