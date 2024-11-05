@@ -142,6 +142,19 @@ CREATE TABLE member_coupon (
     CONSTRAINT FK_coupon_TO_member_coupon FOREIGN KEY (coupon_id) REFERENCES coupon(coupon_id)
 );
 
+-- DELIVERY_RULE 테이블 생성
+DROP TABLE IF EXISTS delivery_rule;
+
+CREATE TABLE delivery_rule (
+	delivery_rule_id BIGINT NOT NULL AUTO_INCREMENT,
+	delivery_rule_name VARCHAR(30) NOT NULL,
+	delivery_fee INT NOT NULL,
+	delivery_discount_cost INT NULL COMMENT 'ex) 3만원 이상 무료배송',
+	delivery_rule_is_selected BOOLEAN NOT NULL COMMENT '현재 사용중인 배송 정책 판단',
+	delivery_rule_created_at DATETIME NOT NULL,
+	PRIMARY KEY (delivery_rule_id)
+);
+
 -- ORDERS 테이블 생성 (ORDER를 ORDERS로 변경)
 DROP TABLE IF EXISTS orders;
 
@@ -324,19 +337,6 @@ CREATE TABLE order_status (
 	order_status_id BIGINT NOT NULL AUTO_INCREMENT,
 	order_status_name ENUM('PENDING', 'IN_SHOPPING', 'COMPLETED', 'RETURNED', 'CANCELED') NOT NULL DEFAULT 'PENDING' COMMENT '대기, 배송중, 완료, 반품, 주문취소',
 	PRIMARY KEY (order_status_id)
-);
-
--- DELIVERY_RULE 테이블 생성
-DROP TABLE IF EXISTS delivery_rule;
-
-CREATE TABLE delivery_rule (
-	delivery_rule_id BIGINT NOT NULL AUTO_INCREMENT,
-	delivery_rule_name VARCHAR(30) NOT NULL,
-	delivery_fee INT NOT NULL,
-	delivery_discount_cost INT NULL COMMENT 'ex) 3만원 이상 무료배송',
-	delivery_rule_is_selected BOOLEAN NOT NULL COMMENT '현재 사용중인 배송 정책 판단',
-	delivery_rule_created_at DATETIME NOT NULL,
-	PRIMARY KEY (delivery_rule_id)
 );
 
 -- PACKAGING 테이블 생성
