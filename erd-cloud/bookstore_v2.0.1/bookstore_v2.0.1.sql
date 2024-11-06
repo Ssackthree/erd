@@ -52,7 +52,7 @@ CREATE TABLE book (
 	book_index VARCHAR(255) NOT NULL,
 	book_info TEXT NOT NULL,
 	book_isbn VARCHAR(20) NOT NULL UNIQUE,
-    book_status VARCHAR(20) NOT NULL DEFAULT '판매 중'
+    	book_status VARCHAR(20) NOT NULL DEFAULT '판매 중',
 	publication_date DATETIME NOT NULL,
 	regular_price INT NOT NULL,
 	sale_price INT NOT NULL,
