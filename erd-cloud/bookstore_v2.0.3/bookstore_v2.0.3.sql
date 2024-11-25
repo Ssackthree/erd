@@ -476,7 +476,7 @@ CREATE TABLE payment (
 	payment_created_at DATETIME NOT NULL,
 	payment_amount INT NOT NULL,
 	payment_key VARCHAR(200) NULL,
-	payment_status ENUM('COMPLETE', 'CANCEL') NOT NULL COMMENT '완료, 취소',
+	payment_status ENUM('DONE', 'CANCEL') NOT NULL COMMENT '완료, 취소',
 	PRIMARY KEY (payment_id),
     
        -- orders_id를 orders 테이블의 orders_id와 연결하는 외래 키
