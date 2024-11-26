@@ -182,7 +182,10 @@ CREATE TABLE orders (
 
 
     PRIMARY KEY (orders_id),
-    
+
+
+CONSTRAINT FK_customer_TO_orders FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+
     -- member_coupon_id를 member_coupon 테이블의 member_coupon_id와 연결하는 외래 키
     CONSTRAINT FK_member_coupon_TO_orders FOREIGN KEY (member_coupon_id) REFERENCES member_coupon(member_coupon_id),
 
